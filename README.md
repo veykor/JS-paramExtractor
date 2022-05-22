@@ -14,7 +14,7 @@ var fieldToSplit='';
 
 for example
 
-for extract a list with some param from pokemon essential db(pokemonEssential.txt)
+for extract a list with some param from pokemon essential db(pokemonEssential.txt) property from Maruno17 https://github.com/Maruno17/pokemon-essentials/blob/master/PBS/pokemon.txt
 
 we use:
 var textSplit='#-----';
