@@ -1,4 +1,7 @@
 # JS-paramExtractor
+
+Thanks to Danyz89.
+
 Tool for extract parameters from text and create a objects array 
 
 paramExtractor uses a text o char for split a general text
