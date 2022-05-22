@@ -1,0 +1,21 @@
+var regexList=[];/*[['name', /^Name\s?=\s?(\w+)/mi],
+	['types', /^Types\s?=\s?((\w+,?)+)/mi],
+	['baseStats', /^BaseStats\s?=\s?((\d+,?)+)/mi],
+	['description', /^Pokedex\s?=\s?([\wéáíóúèàìòùº\s\d\.\'\,\-\—\(\)\!\"]+)\r\n/mi]];*/
+
+var textSplit='#-----';
+var fieldToSplit='types baseStats';
+
+function paramExtractor(dataRaw){
+	var res=[];
+	var dataBlocks = dataRaw.split(textSplit);
+	dataBlocks.forEach(function(dataBlock, index) {
+		regexList.forEach(function(fieldPair) {
+			var fieldData = dataBlock.match(fieldPair[1]);
+			if(!fieldData) return;
+			if(res[index]===undefined) res[index]={};
+			res[index][fieldPair[0]]=(!exceptionSplit.includes(fieldPair[0])?(fieldData[1]):(fieldData[1].includes(',')?fieldData[1].split(','):[fieldData[1]]));
+		});
+	});
+	return res;
+}
